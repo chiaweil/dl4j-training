@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dl4j-examples" />
+        <module name="dl4j-labs" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="dl4j-examples" target="1.8" />
+      <module name="dl4j-labs" target="1.8" />
+      <module name="dl4j-training" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
