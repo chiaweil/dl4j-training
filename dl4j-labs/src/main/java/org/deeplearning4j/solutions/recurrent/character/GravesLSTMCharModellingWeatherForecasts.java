@@ -93,10 +93,7 @@ public class GravesLSTMCharModellingWeatherForecasts
         int generateSamplesEveryNMinibatches = 30;      //How frequently to generate samples from the network?
         int numSamples = 4;					            //Number of samples to generate after each training epoch
         int charactersInEachSample = 1200;              //Lenght of each sample to generate
-        /*
-		#### LAB STEP 1 #####
-		Split input text file  -> split input text into minibatch, with each minibatch containing certain length
-        */
+
         CharacterIterator characterIter = getCharacterIterator(miniBatchSize, exampleLength);
         int inputLayerSize = characterIter.inputColumns();
         int outputLayerSize = characterIter.totalOutcomes(); //both are same ( minimal characters length)
