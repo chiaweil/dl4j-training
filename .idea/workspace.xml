@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38bd6ab2-0b35-4442-b3ff-0cfefd177ed0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/feedforward/DataVecLab.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/feedforward/MnistImageLoad.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/feedforward/MnistImageSave.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/feedforward/SimplestNetwork.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/recurrent/physionet/PhysionetMultivariateTimeSeriesClassification.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/training/feedforward/DataVecLab.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/training/feedforward/MnistImageLoad.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/training/feedforward/MnistImageSave.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/training/feedforward/SimplestNetwork.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/training/recurrent/physionet/PhysionetMultivariateTimeSeriesClassification.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/training/recurrent/seqclassification/UCISequenceClassification.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dl4j-labs/target/classes/org/deeplearning4j/solutions/recurrent/character/GravesLSTMCharModellingWeatherForecasts.class" afterPath="$PROJECT_DIR$/dl4j-labs/target/classes/org/deeplearning4j/solutions/recurrent/character/GravesLSTMCharModellingWeatherForecasts.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dl4j-labs/target/classes/org/deeplearning4j/solutions/recurrent/seqclassification/UCISequenceClassification.class" afterPath="$PROJECT_DIR$/dl4j-labs/target/classes/org/deeplearning4j/solutions/recurrent/seqclassification/UCISequenceClassification.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/feedforward/MLPClassifierLinear.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/recurrent/character/GravesLSTMCharModellingWeatherForecasts.java" afterPath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/recurrent/character/GravesLSTMCharModellingWeatherForecasts.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/recurrent/seqclassification/UCISequenceClassification.java" afterPath="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/recurrent/seqclassification/UCISequenceClassification.java" />
     </list>
     <ignored path="$PROJECT_DIR$/dl4j-examples/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,12 +21,12 @@
     </SUITE>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="MnistImageSave.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/training/feedforward/MnistImageSave.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="MLPClassifierLinear.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/feedforward/MLPClassifierLinear.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="168" column="1" lean-forward="false" selection-start-line="168" selection-start-column="1" selection-end-line="168" selection-end-column="1" />
+            <state relative-caret-position="412">
+              <caret line="57" column="60" lean-forward="false" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MnistImageLoad.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/training/feedforward/MnistImageLoad.java">
+      <file leaf-file-name="GravesLSTMCharModellingWeatherForecasts.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/recurrent/character/GravesLSTMCharModellingWeatherForecasts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="90" column="60" lean-forward="false" selection-start-line="90" selection-start-column="60" selection-end-line="90" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -115,6 +101,7 @@
         <option value="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/feedforward/MnistImageLoad.java" />
         <option value="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/training/feedforward/MnistImageSave.java" />
         <option value="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/training/feedforward/MnistImageLoad.java" />
+        <option value="$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/feedforward/MLPClassifierLinear.java" />
       </list>
     </option>
   </component>
@@ -160,9 +147,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -213,6 +197,62 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="deeplearning4j" type="462c0819:PsiDirectoryNode" />
+              <item name="solutions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dl4j-training" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dl4j-training" type="462c0819:PsiDirectoryNode" />
+              <item name="dl4j-labs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="deeplearning4j" type="462c0819:PsiDirectoryNode" />
+              <item name="solutions" type="462c0819:PsiDirectoryNode" />
+              <item name="feedforward" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dl4j-training" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dl4j-training" type="462c0819:PsiDirectoryNode" />
+              <item name="dl4j-labs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="deeplearning4j" type="462c0819:PsiDirectoryNode" />
+              <item name="solutions" type="462c0819:PsiDirectoryNode" />
+              <item name="recurrent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dl4j-training" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dl4j-training" type="462c0819:PsiDirectoryNode" />
+              <item name="dl4j-labs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="deeplearning4j" type="462c0819:PsiDirectoryNode" />
+              <item name="solutions" type="462c0819:PsiDirectoryNode" />
+              <item name="recurrent" type="462c0819:PsiDirectoryNode" />
+              <item name="character" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dl4j-training" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dl4j-training" type="462c0819:PsiDirectoryNode" />
+              <item name="dl4j-labs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="deeplearning4j" type="462c0819:PsiDirectoryNode" />
+              <item name="solutions" type="462c0819:PsiDirectoryNode" />
+              <item name="recurrent" type="462c0819:PsiDirectoryNode" />
+              <item name="physionet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dl4j-training" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dl4j-training" type="462c0819:PsiDirectoryNode" />
+              <item name="dl4j-labs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="deeplearning4j" type="462c0819:PsiDirectoryNode" />
               <item name="training" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -226,11 +266,22 @@
               <item name="training" type="462c0819:PsiDirectoryNode" />
               <item name="feedforward" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="dl4j-training" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dl4j-training" type="462c0819:PsiDirectoryNode" />
+              <item name="dl4j-labs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,7 +308,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MnistImageLoad (1)">
+  <component name="RunManager" selected="Application.MLPClassifierLinear">
+    <configuration name="MLPClassifierLinear" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.deeplearning4j.solutions.feedforward.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="org.deeplearning4j.solutions.feedforward.MLPClassifierLinear" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="dl4j-labs" />
+      <envs />
+    </configuration>
     <configuration name="MnistImageLoad (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -323,25 +393,6 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="org.deeplearning4j.solutions.feedforward.MnistImageSave" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="dl4j-labs" />
-      <envs />
-    </configuration>
-    <configuration name="PhysionetRef" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.deeplearning4j.solutions.recurrent.physionet.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="org.deeplearning4j.solutions.recurrent.physionet.PhysionetRef" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -435,19 +486,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.PhysionetRef" />
-      <item index="1" class="java.lang.String" itemvalue="Application.MnistImageSave" />
-      <item index="2" class="java.lang.String" itemvalue="Application.MnistImageLoad" />
-      <item index="3" class="java.lang.String" itemvalue="Application.MnistImageSave (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Application.MnistImageLoad (1)" />
+      <item index="0" class="java.lang.String" itemvalue="Application.MnistImageSave" />
+      <item index="1" class="java.lang.String" itemvalue="Application.MnistImageLoad" />
+      <item index="2" class="java.lang.String" itemvalue="Application.MnistImageSave (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Application.MnistImageLoad (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Application.MLPClassifierLinear" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.MnistImageLoad (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Application.MnistImageSave (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Application.MnistImageLoad" />
-        <item index="3" class="java.lang.String" itemvalue="Application.MnistImageSave" />
-        <item index="4" class="java.lang.String" itemvalue="Application.PhysionetRef" />
+        <item index="0" class="java.lang.String" itemvalue="Application.MLPClassifierLinear" />
+        <item index="1" class="java.lang.String" itemvalue="Application.MnistImageLoad (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Application.MnistImageSave (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Application.MnistImageLoad" />
+        <item index="4" class="java.lang.String" itemvalue="Application.MnistImageSave" />
       </list>
     </recent_temporary>
   </component>
@@ -489,8 +540,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2739628" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27753934" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -503,6 +553,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -548,21 +599,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../dl4j-examples/dl4j-examples/src/main/java/org/deeplearning4j/examples/recurrent/seqclassification/UCISequenceClassificationExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/resources/UCI/train/features/0.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/recurrent/seqclassification/UCISequenceClassificationRef.java" />
     <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/resources/UCI/train/labels/0.csv">
       <provider selected="true" editor-type-id="text-editor">
@@ -625,7 +661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="41" column="66" lean-forward="false" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -668,7 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="95" column="8" lean-forward="false" selection-start-line="95" selection-start-column="8" selection-end-line="98" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -694,7 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1759">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,7 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-30">
           <caret line="46" column="124" lean-forward="false" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="124" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,7 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,7 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -762,7 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -770,7 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -778,7 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -786,7 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -794,7 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -802,41 +827,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/recurrent/physionet/PhysionetRef.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="94" column="28" lean-forward="false" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/recurrent/physionet/PhysionetRef.java" />
     <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/resources/text/weather.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-361">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/recurrent/character/GravesLSTMCharModellingWeatherForecasts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-353">
-          <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/recurrent/physionet/PhysionetMultivariateTimeSeriesClassification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -844,7 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -860,7 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-11">
           <caret line="87" column="51" lean-forward="false" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -894,7 +890,7 @@
         <state relative-caret-position="45">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="169" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -904,17 +900,17 @@
         <state relative-caret-position="266">
           <caret line="57" column="64" lean-forward="false" selection-start-line="57" selection-start-column="64" selection-end-line="57" selection-end-column="64" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/training/feedforward/MnistImageSave.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="2070">
           <caret line="168" column="1" lean-forward="false" selection-start-line="168" selection-start-column="1" selection-end-line="168" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -923,6 +919,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/feedforward/CLASSIFICATION.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/recurrent/physionet/PhysionetMultivariateTimeSeriesClassification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/feedforward/MLPClassifierLinear.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="57" column="60" lean-forward="false" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dl4j-labs/src/main/java/org/deeplearning4j/solutions/recurrent/character/GravesLSTMCharModellingWeatherForecasts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="90" column="60" lean-forward="false" selection-start-line="90" selection-start-column="60" selection-end-line="90" selection-end-column="60" />
           <folding />
         </state>
       </provider>
