@@ -15,6 +15,7 @@ import org.deeplearning4j.ui.storage.InMemoryStatsStorage;
 import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
+import org.nd4j.linalg.learning.config.Nesterovs;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -62,9 +63,8 @@ public class SimplestNetwork
         MultiLayerConfiguration config = new NeuralNetConfiguration.Builder()
                 .seed(seed)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-                .learningRate(learningRate)
                 .weightInit(WeightInit.XAVIER)
-                .updater(Updater.NESTEROVS)
+                .updater(new Nesterovs(learningRate, 0.9))
                 .list()
                 .layer(0, new DenseLayer.Builder()
                         .nIn(numInputs)

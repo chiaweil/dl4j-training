@@ -20,6 +20,7 @@ import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.factory.Nd4j;
+import org.nd4j.linalg.learning.config.RmsProp;
 import org.nd4j.linalg.lossfunctions.LossFunctions.LossFunction;
 
 import java.io.File;
@@ -116,9 +117,8 @@ public class GravesLSTMCharModellingWeatherForecasts
             .seed(seedNumber)
             .weightInit(WeightInit.XAVIER)
             .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-            .learningRate(learningRate)
-            .updater(Updater.RMSPROP)
-            .regularization(true).l2(l2Value)
+            .updater(new RmsProp(learningRate))
+            .l2(l2Value)
             .list()
             .layer(0, new GravesLSTM.Builder()
                 .nIn(inputLayerSize)

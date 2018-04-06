@@ -7,11 +7,11 @@
 
     <parent>
         <groupId>org.deeplearning4j</groupId>
-        <artifactId>deeplearning4j-examples-parent</artifactId>
-        <version>0.9.1</version>
+        <artifactId>deeplearning4j-training-parent</artifactId>
+        <version>1.0.0-alpha</version>
     </parent>
 
-    <name>DeepLearning4j Examples</name>
+    <name>DeepLearning4j Labs</name>
 
     <repositories>
         <repository>
@@ -149,6 +149,12 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.3.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>javacpp</artifactId>
+            <version>1.4.1</version>
         </dependency>
 
     </dependencies>

@@ -23,6 +23,7 @@ import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.dataset.api.iterator.DataSetIterator;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.io.ClassPathResource;
+import org.nd4j.linalg.learning.config.Nesterovs;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,6 +55,7 @@ public class MLPClassifierLinear
         int numOutputs = 2;
         int numHiddenNodes = 5;
 
+
         final String fileNameTrain = new ClassPathResource("/classification/linear_data_train.csv").getFile().getPath();
         final String fileNameTest = new ClassPathResource("/classification/linear_data_eval.csv").getFile().getPath();
 
@@ -61,20 +63,23 @@ public class MLPClassifierLinear
         RecordReader rrTrain = new CSVRecordReader();
         rrTrain.initialize(new FileSplit(new File(fileNameTrain)));
 
-        DataSetIterator dataIterTrain = new RecordReaderDataSetIterator(rrTrain, batchSize, 0, 2);
+        int labelIndex = 0;
+        int numClasses = 2;
+
+
+        DataSetIterator dataIterTrain = new RecordReaderDataSetIterator(rrTrain, batchSize, labelIndex, numClasses);
 
         //load the test/evaluation data
         RecordReader rrTest = new CSVRecordReader();
         rrTest.initialize(new FileSplit(new File(fileNameTest)));
 
-        DataSetIterator dataIterTest = new RecordReaderDataSetIterator(rrTest, batchSize, 0, 2);
+        DataSetIterator dataIterTest = new RecordReaderDataSetIterator(rrTest, batchSize, labelIndex, numClasses);
 
         //Build Model Configuration
         MultiLayerConfiguration config = new NeuralNetConfiguration.Builder()
                 .seed(seed)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-                .learningRate(learningRate)
-                .updater(Updater.NESTEROVS)
+                .updater(new Nesterovs(learningRate, 0.9))
                 .list()
                 .layer(0, new DenseLayer.Builder()
                         .nIn(numInputs)

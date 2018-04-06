@@ -24,6 +24,7 @@ import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.dataset.SplitTestAndTrain;
 import org.nd4j.linalg.dataset.api.iterator.DataSetIterator;
+import org.nd4j.linalg.learning.config.Nesterovs;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,9 +55,8 @@ public class DataVecLab
         //First: get the dataset using the record reader. CSVRecordReader handles loading/parsing
         File filePath = new ClassPathResource("text/iris.txt").getFile();
         int numLinesToSkip = 0;
-        String delimiter = ",";
 
-        RecordReader recordReader = new CSVRecordReader(numLinesToSkip, delimiter);
+        RecordReader recordReader = new CSVRecordReader(numLinesToSkip);
         recordReader.initialize(new FileSplit(filePath));
 
         //Second: the RecordReaderDataSetIterator handles conversion to DataSet objects, ready for use in neural network
@@ -66,7 +66,7 @@ public class DataVecLab
 
         DataSetIterator iterator = new RecordReaderDataSetIterator(recordReader, batchSize, labelIndex, numClasses);
 
-        DataSet allData = iterator.next(); //only one dataset in this case
+        DataSet allData = iterator.next(batchSize); //only one dataset in this case
         allData.shuffle();
 
         SplitTestAndTrain testAndTrain = allData.splitTestAndTrain(0.65);  //Use 65% of data for training
@@ -92,9 +92,8 @@ public class DataVecLab
                 .seed(seed)
                 .weightInit(WeightInit.XAVIER)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-                .learningRate(0.01)
-                .updater(Updater.NESTEROVS)
-                .regularization(true).l2(1e-4)
+                .updater(new Nesterovs(0.01, 0.9))
+                .l2(1e-4)
                 .list()
                 .layer(0, new DenseLayer.Builder()
                         .nIn(numInputs)

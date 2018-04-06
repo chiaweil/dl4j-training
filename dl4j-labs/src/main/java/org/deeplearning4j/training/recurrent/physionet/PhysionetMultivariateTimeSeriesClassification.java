@@ -25,6 +25,7 @@ import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.dataset.api.iterator.DataSetIterator;
+import org.nd4j.linalg.learning.config.Adam;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 
 import java.io.File;
@@ -117,8 +118,7 @@ public class PhysionetMultivariateTimeSeriesClassification
                 .seed(seedNumber)
                 .weightInit(WeightInit.XAVIER)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-                .learningRate(learningRate)
-                .updater(Updater.ADAM)
+                .updater(new Adam(learningRate))
                 .graphBuilder()
                 .addInputs("trainFeatures")
                 .setOutputs("predictMortality")

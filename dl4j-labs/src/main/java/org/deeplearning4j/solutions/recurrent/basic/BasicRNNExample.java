@@ -17,6 +17,8 @@ import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.api.ops.impl.indexaccum.IMax;
 import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.factory.Nd4j;
+import org.nd4j.linalg.learning.config.Nesterovs;
+import org.nd4j.linalg.learning.config.RmsProp;
 import org.nd4j.linalg.lossfunctions.LossFunctions.LossFunction;
 
 import java.lang.String;
@@ -74,8 +76,7 @@ public class BasicRNNExample
         //Neural net configuration
         MultiLayerConfiguration config = new NeuralNetConfiguration.Builder()
                 .seed(123)
-                .learningRate(0.001)
-                .updater(Updater.RMSPROP)
+                .updater(new RmsProp(0.001))
                 .weightInit(WeightInit.XAVIER)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
                 .miniBatch(false)
