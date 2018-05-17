@@ -3,23 +3,16 @@ import org.datavec.api.records.reader.RecordReader;
 import org.datavec.api.records.reader.impl.csv.CSVRecordReader;
 import org.datavec.api.split.FileSplit;
 import org.datavec.api.util.ClassPathResource;
-import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.datasets.datavec.RecordReaderDataSetIterator;
-import org.deeplearning4j.eval.Evaluation;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
-import org.deeplearning4j.nn.conf.Updater;
 import org.deeplearning4j.nn.conf.layers.DenseLayer;
 import org.deeplearning4j.nn.conf.layers.OutputLayer;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.deeplearning4j.nn.weights.WeightInit;
 import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
-import org.deeplearning4j.ui.api.UIServer;
-import org.deeplearning4j.ui.stats.StatsListener;
-import org.deeplearning4j.ui.storage.InMemoryStatsStorage;
 import org.nd4j.linalg.activations.Activation;
-import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.dataset.SplitTestAndTrain;
 import org.nd4j.linalg.dataset.api.iterator.DataSetIterator;
@@ -38,8 +31,9 @@ import java.io.File;
  * 5.1, 3.5, 1.4, 0.2, 0
  *
  * Look for LAB STEP below. Uncomment to proceed.
- * 1. Evaluate the network
- * 2. Tune the network
+ * 1. Set up Graphical UI listener
+ * 2. Evaluate the network
+ * 3. Tune the network
  *
  * @author Adam Gibson
  */
@@ -114,20 +108,19 @@ public class DataVecLab
                 .pretrain(false)
                 .build();
 
+
         /*
+		#### LAB STEP 1 #####
         Create a web based UI server to show progress as the network trains
         The Listeners for the model are set here as well
         One listener to pass stats to the UI
         and a Listener to pass progress info to the console
         */
-        StatsStorage storage = new InMemoryStatsStorage();
-        UIServer server = UIServer.getInstance();
-        server.attach(storage);
 
         //run the model
         MultiLayerNetwork model = new MultiLayerNetwork(conf);
         model.init();
-        model.setListeners(new ScoreIterationListener(1), new StatsListener(storage, 1));
+        model.setListeners(new ScoreIterationListener(1));
 
         for(int i = 0 ; i < epoch; ++i)
         {
@@ -136,8 +129,8 @@ public class DataVecLab
             Thread.sleep(100);
         }
 
-         /*
-		#### LAB STEP 1 #####
+        /*
+		#### LAB STEP 2 #####
 		Evaluate the model on the test set
         */
         /*
@@ -156,7 +149,7 @@ public class DataVecLab
         */
 
         /*
-		#### LAB STEP 2 #####
+		#### LAB STEP 3 #####
 		Tune the network
         */
 

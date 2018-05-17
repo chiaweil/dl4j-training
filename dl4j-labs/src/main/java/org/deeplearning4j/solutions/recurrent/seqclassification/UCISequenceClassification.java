@@ -98,7 +98,7 @@ public class UCISequenceClassification
 		#### LAB STEP 1 #####
 		Download and prepare the data
         */
-        final int miniBatchSize = 10;
+        final int miniBatchSize = 50;
         final int numLabelClasses = 6;
 
         SequenceRecordReader trainFeatures = new CSVSequenceRecordReader();

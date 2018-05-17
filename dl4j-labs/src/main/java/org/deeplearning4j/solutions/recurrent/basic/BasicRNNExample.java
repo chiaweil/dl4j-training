@@ -47,7 +47,6 @@ public class BasicRNNExample
 
     // Add a special character at the beginning so the RNN learns the complete string and ends with the marker
     private static final String sampleString = "*This example trains a RNN. Look for lab steps below. Uncomment to proceed.";//"*Der Cottbuser Postkutscher putzt den Cottbuser Postkutschkasten."
-    private static final char[] LEARNSTRING = sampleString.toCharArray();
 
     //A list of all possible characters
     private static final List<Character> LEARNSTRING_CHARS_LIST = new ArrayList<>();
@@ -57,12 +56,13 @@ public class BasicRNNExample
 
     public static void main(String[] args)
     {
+        double learningRate = 0.001;
         /*
         #### LAB STEP 2 #####
         Create a dedicated list of possible chars in LEARNSTRING_CHARS_LIST.
         */
 
-
+        char[] LEARNSTRING = sampleString.toCharArray();
         LinkedHashSet<Character> LEARNSTRING_CHARS = new LinkedHashSet<>();
 
         for(char c : LEARNSTRING)
@@ -76,7 +76,7 @@ public class BasicRNNExample
         //Neural net configuration
         MultiLayerConfiguration config = new NeuralNetConfiguration.Builder()
                 .seed(123)
-                .updater(new RmsProp(0.001))
+                .updater(new RmsProp(learningRate))
                 .weightInit(WeightInit.XAVIER)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
                 .miniBatch(false)

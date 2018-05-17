@@ -139,8 +139,7 @@ public class GravesLSTMCharModellingWeatherForecasts
             .pretrain(false)
             .backprop(true)
             .backpropType(BackpropType.TruncatedBPTT)
-            .tBPTTForwardLength(tbpttLength)
-            .tBPTTBackwardLength(tbpttLength)
+            .tBPTTLength(tbpttLength)
             .build();
 
 

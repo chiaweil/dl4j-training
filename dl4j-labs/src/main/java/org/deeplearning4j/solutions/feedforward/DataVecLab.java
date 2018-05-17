@@ -10,7 +10,6 @@ import org.deeplearning4j.eval.Evaluation;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
-import org.deeplearning4j.nn.conf.Updater;
 import org.deeplearning4j.nn.conf.layers.DenseLayer;
 import org.deeplearning4j.nn.conf.layers.OutputLayer;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
@@ -39,8 +38,9 @@ import java.io.File;
  * 5.1, 3.5, 1.4, 0.2, 0
  *
  * Look for LAB STEP below. Uncomment to proceed.
- * 1. Evaluate the network
- * 2. Tune the network
+ * 1. Set up Graphical UI listener
+ * 2. Evaluate the network
+ * 3. Tune the network
  *
  * @author Adam Gibson
  */
@@ -115,7 +115,9 @@ public class DataVecLab
                 .pretrain(false)
                 .build();
 
+
         /*
+		#### LAB STEP 1 #####
         Create a web based UI server to show progress as the network trains
         The Listeners for the model are set here as well
         One listener to pass stats to the UI
@@ -128,7 +130,7 @@ public class DataVecLab
         //run the model
         MultiLayerNetwork model = new MultiLayerNetwork(conf);
         model.init();
-        model.setListeners(new ScoreIterationListener(1), new StatsListener(storage, 1));
+        model.setListeners(new StatsListener(storage, 5));
 
         for(int i = 0 ; i < epoch; ++i)
         {
@@ -138,7 +140,7 @@ public class DataVecLab
         }
 
         /*
-		#### LAB STEP 1 #####
+		#### LAB STEP 2 #####
 		Evaluate the model on the test set
         */
 
@@ -157,7 +159,7 @@ public class DataVecLab
 
 
         /*
-		#### LAB STEP 2 #####
+		#### LAB STEP 3 #####
 		Tune the network
         */
 

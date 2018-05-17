@@ -1,17 +1,13 @@
 package org.deeplearning4j.solutions.feedforward;
 
-import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
-import org.deeplearning4j.nn.conf.Updater;
 import org.deeplearning4j.nn.conf.layers.DenseLayer;
 import org.deeplearning4j.nn.conf.layers.OutputLayer;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.deeplearning4j.nn.weights.WeightInit;
-import org.deeplearning4j.ui.api.UIServer;
-import org.deeplearning4j.ui.stats.StatsListener;
-import org.deeplearning4j.ui.storage.InMemoryStatsStorage;
+import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
 import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
@@ -27,9 +23,11 @@ import org.slf4j.LoggerFactory;
  * Look for LAB STEP below. Uncomment to proceed.
  * 1. Declare the input and output data in INDArray format
  * 2. Set up the network configuration
- * 3. Set up UI performance monitoring (port http://localhost:9000)
- * 4. Declare MultiLayerNetwork, train the network
- * 5. Tune the network
+ * 3. Declare MultiLayerNetwork, train the network
+ * 4. Tune the network
+ * 5. Change the input and output to below
+ * double[] inputArr = new double[]{0.4, 0.5};
+ * double[] outputArr = new double[]{0.23, 0.855};
  */
 
 public class SimplestNetwork
@@ -83,24 +81,11 @@ public class SimplestNetwork
 
         /*
 		#### LAB STEP 3 #####
-		Set up UI performance monitoring (port http://localhost:9000)
-
-        Create a web based UI server to show progress as the network trains
-        The Listeners for the model are set here as well
-        One listener to pass stats to the UI
-        and a Listener to pass progress info to the console
-        */
-        StatsStorage storage = new InMemoryStatsStorage();
-        UIServer server = UIServer.getInstance();
-        server.attach(storage);
-
-        /*
-		#### LAB STEP 4 #####
 		Declare MultiLayerNetwork, train the network
 		*/
         MultiLayerNetwork model = new MultiLayerNetwork(config);
         model.init();
-        model.setListeners(new StatsListener(storage, 10));
+        model.setListeners(new ScoreIterationListener(5));
 
         for(int i = 0; i < epochs; ++i)
         {
@@ -115,8 +100,15 @@ public class SimplestNetwork
         }
 
         /*
-		#### LAB STEP 5 #####
+		#### LAB STEP 4 #####
         Tune the network
+        */
+
+        /*
+		#### LAB STEP 5 #####
+        Change the input and output to these
+        double[] inputArr = new double[]{0.4, 0.5};
+        double[] outputArr = new double[]{0.23, 0.855};
         */
 
     }

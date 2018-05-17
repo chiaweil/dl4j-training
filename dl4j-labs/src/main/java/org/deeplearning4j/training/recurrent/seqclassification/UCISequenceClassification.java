@@ -101,7 +101,7 @@ public class UCISequenceClassification
         //downloadUCIData();
 
 
-        final int miniBatchSize = 10;
+        final int miniBatchSize = 50;
         final int numLabelClasses = 6;
 
 

@@ -10,9 +10,7 @@ import org.deeplearning4j.datasets.datavec.SequenceRecordReaderDataSetIterator;
 import org.deeplearning4j.eval.Evaluation;
 import org.deeplearning4j.eval.ROC;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
-import org.deeplearning4j.nn.conf.ComputationGraphConfiguration;
-import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
-import org.deeplearning4j.nn.conf.Updater;
+import org.deeplearning4j.nn.conf.*;
 import org.deeplearning4j.nn.conf.layers.GravesLSTM;
 import org.deeplearning4j.nn.conf.layers.RnnOutputLayer;
 import org.deeplearning4j.nn.graph.ComputationGraph;
@@ -48,6 +46,7 @@ import java.io.UnsupportedEncodingException;
  There are total of 4000 data.
  First 3200 samples for training.
  Consecutive 400 samples each for validation and testing.
+ Total data has label 0 of 3446 and label 1 of 554.
 
  Data publicly available at https://physionet.org/challenge/2012/
 
@@ -55,6 +54,7 @@ import java.io.UnsupportedEncodingException;
  http://deeplearning4j.org/usingrnns
  http://deeplearning4j.org/lstm
  http://deeplearning4j.org/recurrentnetwork
+
 
  Look for LAB STEP below. Uncomment to proceed.
  1. Load the validation and testing data
@@ -117,11 +117,13 @@ public class PhysionetMultivariateTimeSeriesClassification
 
         int numInputs = trainData.inputColumns();
         int numClasses = 2; // 0 or 1 for mortality
-        int epochs = 25;
+        int epochs = 20;
         int seedNumber = 123;
         double learningRate = 0.01;
 
         ComputationGraphConfiguration config = new NeuralNetConfiguration.Builder()
+                .trainingWorkspaceMode(WorkspaceMode.NONE)
+                .inferenceWorkspaceMode(WorkspaceMode.NONE)
                 .seed(seedNumber)
                 .weightInit(WeightInit.XAVIER)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
@@ -181,10 +183,9 @@ public class PhysionetMultivariateTimeSeriesClassification
                 Save the model
                 */
 
-                File locationToSave = new File(new ClassPathResource("physionet2012/").getFile().getAbsolutePath().toString() + "_" + i + ".zip");
-                ModelSerializer.writeModel(model, locationToSave, false);
-
-                System.out.println("Model at epoch " + i + " save at " + locationToSave.toString());
+                //File locationToSave = new File(new ClassPathResource("physionet2012/").getFile().getAbsolutePath().toString() + "_" + i + ".zip");
+                //ModelSerializer.writeModel(model, locationToSave, false);
+                //System.out.println("Model at epoch " + i + " save at " + locationToSave.toString());
             }
 
         }
@@ -202,21 +203,29 @@ public class PhysionetMultivariateTimeSeriesClassification
             INDArray[] output = model.output(batch.getFeatures());
             roc.evalTimeSeries(batch.getLabels(), output[0]);
         }
-        System.out.println("***** Test Evaluation *****");
+        System.out.println("***** ROC Test Evaluation *****");
         System.out.println(roc.calculateAUC());
 
 
         testData.reset();
 
         //Evaluation
+        System.out.println("***** Test Evaluation *****");
         Evaluation eval = new Evaluation(numLabelClasses);
 
-        DataSet testDataSet = testData.next();
-        INDArray[] predicted = model.output(testDataSet.getFeatureMatrix());
-        INDArray labels = testDataSet.getLabels();
+        while(testData.hasNext())
+        {
+            DataSet testDataSet = testData.next();
+            INDArray[] predicted = model.output(testDataSet.getFeatureMatrix());
+            INDArray labels = testDataSet.getLabels();
 
-        eval.evalTimeSeries(labels, predicted[0]);
+            eval.evalTimeSeries(labels, predicted[0]);
+        }
+
 
         System.out.println(eval.stats());
     }
 }
+
+//evalTimeSeries
+//padding and masking
