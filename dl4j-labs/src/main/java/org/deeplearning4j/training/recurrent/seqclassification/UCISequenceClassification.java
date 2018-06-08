@@ -17,6 +17,7 @@ import org.deeplearning4j.nn.conf.layers.GravesLSTM;
 import org.deeplearning4j.nn.conf.layers.RnnOutputLayer;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.deeplearning4j.nn.weights.WeightInit;
+import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
 import org.deeplearning4j.ui.api.UIServer;
 import org.deeplearning4j.ui.stats.StatsListener;
 import org.deeplearning4j.ui.storage.InMemoryStatsStorage;
@@ -168,13 +169,8 @@ public class UCISequenceClassification
 
         MultiLayerNetwork network = new MultiLayerNetwork(config);
 
-        //set server listeners
-        StatsStorage storage = new InMemoryStatsStorage();
-        UIServer server = UIServer.getInstance();
 
-        server.attach(storage);
-
-        network.setListeners(new StatsListener(storage, 10));
+        network.setListeners(new ScoreIterationListener(10));
 
 
         // ----- Train the network, evaluating the test set performance at each epoch -----

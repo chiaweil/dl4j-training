@@ -10,14 +10,13 @@ import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.datasets.datavec.SequenceRecordReaderDataSetIterator;
 import org.deeplearning4j.eval.Evaluation;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
-import org.deeplearning4j.nn.conf.GradientNormalization;
-import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
-import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
-import org.deeplearning4j.nn.conf.Updater;
+import org.deeplearning4j.nn.conf.*;
 import org.deeplearning4j.nn.conf.layers.GravesLSTM;
 import org.deeplearning4j.nn.conf.layers.RnnOutputLayer;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.deeplearning4j.nn.weights.WeightInit;
+import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
+import org.deeplearning4j.optimize.solvers.BaseOptimizer;
 import org.deeplearning4j.ui.api.UIServer;
 import org.deeplearning4j.ui.stats.StatsListener;
 import org.deeplearning4j.ui.storage.InMemoryStatsStorage;
@@ -145,6 +144,8 @@ public class UCISequenceClassification
                 .updater(new Nesterovs(0.005, 0.9))
                 .gradientNormalization(GradientNormalization.ClipElementWiseAbsoluteValue)  //Not always required, but helps with this data set
                 .gradientNormalizationThreshold(0.5)
+                .trainingWorkspaceMode(WorkspaceMode.NONE)
+                .inferenceWorkspaceMode(WorkspaceMode.NONE)
                 .list()
                 .layer(0, new GravesLSTM.Builder()
                         .activation(Activation.TANH)
@@ -163,13 +164,7 @@ public class UCISequenceClassification
 
         MultiLayerNetwork network = new MultiLayerNetwork(config);
 
-        //set server listeners
-        StatsStorage storage = new InMemoryStatsStorage();
-        UIServer server = UIServer.getInstance();
-
-        server.attach(storage);
-
-        network.setListeners(new StatsListener(storage, 10));
+        network.setListeners(new ScoreIterationListener(10));
 
 
         // ----- Train the network, evaluating the test set performance at each epoch -----

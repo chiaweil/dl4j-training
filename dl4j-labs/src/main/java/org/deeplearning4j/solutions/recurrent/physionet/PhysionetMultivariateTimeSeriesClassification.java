@@ -4,7 +4,7 @@ import org.apache.commons.lang3.ObjectUtils;
 import org.datavec.api.records.reader.SequenceRecordReader;
 import org.datavec.api.records.reader.impl.csv.CSVSequenceRecordReader;
 import org.datavec.api.split.NumberedFileInputSplit;
-import org.datavec.api.util.ClassPathResource;
+import org.nd4j.linalg.io.ClassPathResource;
 import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.datasets.datavec.SequenceRecordReaderDataSetIterator;
 import org.deeplearning4j.eval.Evaluation;
@@ -201,7 +201,7 @@ public class PhysionetMultivariateTimeSeriesClassification
         {
             DataSet batch = testData.next();
             INDArray[] output = model.output(batch.getFeatures());
-            roc.evalTimeSeries(batch.getLabels(), output[0]);
+            roc.evalTimeSeries(batch.getLabels(), output[0], batch.getLabelsMaskArray());
         }
         System.out.println("***** ROC Test Evaluation *****");
         System.out.println(roc.calculateAUC());
@@ -219,10 +219,11 @@ public class PhysionetMultivariateTimeSeriesClassification
             INDArray[] predicted = model.output(testDataSet.getFeatureMatrix());
             INDArray labels = testDataSet.getLabels();
 
-            eval.evalTimeSeries(labels, predicted[0]);
+            eval.evalTimeSeries(labels, predicted[0], testDataSet.getLabelsMaskArray());
         }
 
 
+        System.out.println(eval.confusionToString());
         System.out.println(eval.stats());
     }
 }
