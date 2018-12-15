@@ -39,11 +39,11 @@ public class SimplestNetwork
     public static void main(String[] args) throws Exception
     {
         int seed = 123; // consistent Random Numbers needed for testing. Initial weights are randomized
-        int epochs = 50; // Number of epochs(full passes of the data)
+        int epochs = 15; // Number of epochs(full passes of the data)
         double learningRate = 0.001; //How fast to adjust weights to minimize error
         int numInputs = 1; // number of input nodes
         int numOutputs = 1; // number of output nodes
-        int nHidden = 5; // number of hidden nodes
+        int nHidden = 1; // number of hidden nodes
 
 
         /*

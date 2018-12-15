@@ -58,8 +58,6 @@ public class MnistMLP
                 .weightInit(WeightInit.XAVIER)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
                 .updater(new Nesterovs(learningRate, Nesterovs.DEFAULT_NESTEROV_MOMENTUM))
-                .trainingWorkspaceMode(WorkspaceMode.ENABLED)
-                .inferenceWorkspaceMode(WorkspaceMode.ENABLED)
                 .list()
                 .layer(0, new DenseLayer.Builder()
                         .nIn(numRows * numColumns)

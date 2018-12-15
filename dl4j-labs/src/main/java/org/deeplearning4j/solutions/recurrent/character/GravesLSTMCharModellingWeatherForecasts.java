@@ -77,7 +77,7 @@ import static java.lang.Math.ceil;
 
 
 
-public class GravesLSTMCharModellingWeatherForecasts
+public class  GravesLSTMCharModellingWeatherForecasts
 {
 
     static final int seedNumber = 12345;

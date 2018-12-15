@@ -25,6 +25,7 @@ import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.dataset.api.iterator.DataSetIterator;
 import org.nd4j.linalg.learning.config.Adam;
+import org.nd4j.linalg.learning.config.Nesterovs;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 
 import java.io.File;
@@ -117,7 +118,7 @@ public class PhysionetMultivariateTimeSeriesClassification
 
         int numInputs = trainData.inputColumns();
         int numClasses = 2; // 0 or 1 for mortality
-        int epochs = 20;
+        int epochs = 10;
         int seedNumber = 123;
         double learningRate = 0.01;
 
@@ -127,7 +128,7 @@ public class PhysionetMultivariateTimeSeriesClassification
                 .seed(seedNumber)
                 .weightInit(WeightInit.XAVIER)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-                .updater(new Adam(learningRate))
+                .updater(new Nesterovs(learningRate))
                 .graphBuilder()
                 .addInputs("trainFeatures")
                 .setOutputs("predictMortality")

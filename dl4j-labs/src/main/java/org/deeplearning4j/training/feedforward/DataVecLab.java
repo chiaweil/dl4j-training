@@ -77,7 +77,7 @@ public class DataVecLab
         int numInputs = 4;
         int numOutputs = 3;
         int seed = 123;
-        int epoch = 20;
+        int epoch = 10;
 
 
         log.info("Build model....");
